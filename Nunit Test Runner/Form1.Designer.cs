@@ -193,7 +193,7 @@
             this.Controls.Add(this.nunitdllpath);
             this.Controls.Add(this.listBoxTestNames);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Nunit Test Runner";
             this.ResumeLayout(false);
             this.PerformLayout();
 
