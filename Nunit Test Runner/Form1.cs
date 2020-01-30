@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Nunit_Test_Runner
             InitializeComponent();
         }
 
-
+        //open the DLL button
         private void button1_Click(object sender, EventArgs e)
         {
             if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -29,6 +30,7 @@ namespace Nunit_Test_Runner
             }
         }
 
+        //retrieve test case names button
         private void button2_Click(object sender, EventArgs e)
         {
             this.listBoxTestNames.Items.Clear();
@@ -50,6 +52,19 @@ namespace Nunit_Test_Runner
             }
         }
 
+        
+
+        //results path
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.textBoxResultsFolder.Text = this.folderBrowserDialog1.SelectedPath;
+            }
+
+        }
+
+        //console runner selection button
         private void button3_Click(object sender, EventArgs e)
         {
             if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -58,17 +73,26 @@ namespace Nunit_Test_Runner
             }
         }
 
+        //run the tests button
         private void button4_Click(object sender, EventArgs e)
         {
             this.textBoxResults.Clear();
-            //string selectedTest = this.listBoxTestNames.Items[listBoxTestNames.SelectedIndex].ToString();
             string selectedTest = this.listBoxTestNames.SelectedItem.ToString();
             string DllPath = "\"" + this.nunitdllpath.Text + "\"";
             string runnerPath = "\"" + this.textBoxRunnerPath.Text + "\"";
-            string resultsPath = "\"" + this.folderBrowserDialog1.SelectedPath + "\\TestResult.xml\"";
-            string args = "--test=" + selectedTest + " --result=" + resultsPath + " " + DllPath;
+            string resultsPath = "\"" + this.textBoxResultsFolder.Text + "\"";
+            string args = "--test=" + selectedTest + " --result=" + resultsPath +"\\TestResult.xml" + " " + DllPath;
             this.textBoxCMD.Text = runnerPath + " " + args;
-            ExecuteCommand(runnerPath, args);
+            bool testsRan = ExecuteCommand(runnerPath, args);
+            //now convert results to html
+            if (testsRan)
+            {
+                string path = Directory.GetCurrentDirectory();
+                string pathToNure = "\"" + path + "\\Nure.1.2.0\\tools\\nure.exe\"";
+                this.textBoxResults.AppendText(pathToNure + " " + resultsPath + "\\TestResult.xml -o \"" + resultsPath + "\" --html");
+                ExecuteCommand(pathToNure, resultsPath + "\\TestResult.xml -o \"" + resultsPath + "\" --html");
+
+            }
         }
 
         public bool ExecuteCommand(string exeDir, string args)
@@ -108,21 +132,11 @@ namespace Nunit_Test_Runner
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
-            {
-                this.textBoxResultsFolder.Text = this.folderBrowserDialog1.SelectedPath + "\\TestResult.xml";
-            }
-            
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             this.nunitdllpath.Text = Properties.Settings.Default.dllpath;
             this.textBoxRunnerPath.Text = Properties.Settings.Default.runnerpath;
             this.textBoxResultsFolder.Text = Properties.Settings.Default.respath;
-            this.textBoxRunnerPath.Text = "hello";
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -131,7 +145,7 @@ namespace Nunit_Test_Runner
                 Properties.Settings.Default.runnerpath = this.textBoxRunnerPath.Text;
                 Properties.Settings.Default.respath = this.textBoxResultsFolder.Text;
                 Properties.Settings.Default.Save();
-                Properties.Settings.Default.Upgrade();
+                //Properties.Settings.Default.Upgrade();
         }
     }
 }

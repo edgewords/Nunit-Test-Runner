@@ -66,6 +66,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Nure.1.2.0\.signature.p7s" />
+    <None Include="Nure.1.2.0\Nure.1.2.0.nupkg" />
+    <None Include="Nure.1.2.0\tools\nure.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +81,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Nure.1.2.0\tools\CommandLine.dll" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Nure.1.2.0\tools\HtmlAgilityPack.dll" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Nure.1.2.0\tools\Newtonsoft.Json.dll" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Nure.1.2.0\tools\nunit.framework.dll" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Nure.1.2.0\tools\NUnitReporter.EventReport.dll" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Nure.1.2.0\tools\nure.exe" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
