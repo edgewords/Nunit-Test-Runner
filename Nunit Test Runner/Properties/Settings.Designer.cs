@@ -46,5 +46,17 @@ namespace Nunit_Test_Runner.Properties {
                 this["runnerpath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string respath {
+            get {
+                return ((string)(this["respath"]));
+            }
+            set {
+                this["respath"] = value;
+            }
+        }
     }
 }

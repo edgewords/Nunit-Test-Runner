@@ -43,6 +43,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxResults = new System.Windows.Forms.TextBox();
             this.textBoxCMD = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.textBoxResultsFolder = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listBoxTestNames
@@ -115,7 +119,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 263);
+            this.label4.Location = new System.Drawing.Point(26, 265);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(13, 13);
             this.label4.TabIndex = 2;
@@ -123,7 +127,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(45, 258);
+            this.button3.Location = new System.Drawing.Point(45, 307);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(138, 23);
             this.button3.TabIndex = 6;
@@ -133,14 +137,14 @@
             // 
             // textBoxRunnerPath
             // 
-            this.textBoxRunnerPath.Location = new System.Drawing.Point(190, 260);
+            this.textBoxRunnerPath.Location = new System.Drawing.Point(190, 309);
             this.textBoxRunnerPath.Name = "textBoxRunnerPath";
             this.textBoxRunnerPath.Size = new System.Drawing.Size(577, 20);
             this.textBoxRunnerPath.TabIndex = 7;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(45, 321);
+            this.button4.Location = new System.Drawing.Point(45, 370);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 23);
             this.button4.TabIndex = 8;
@@ -151,7 +155,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 326);
+            this.label5.Location = new System.Drawing.Point(26, 312);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(13, 13);
             this.label5.TabIndex = 2;
@@ -159,7 +163,7 @@
             // 
             // textBoxResults
             // 
-            this.textBoxResults.Location = new System.Drawing.Point(190, 350);
+            this.textBoxResults.Location = new System.Drawing.Point(190, 399);
             this.textBoxResults.Multiline = true;
             this.textBoxResults.Name = "textBoxResults";
             this.textBoxResults.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -168,16 +172,44 @@
             // 
             // textBoxCMD
             // 
-            this.textBoxCMD.Location = new System.Drawing.Point(190, 321);
+            this.textBoxCMD.Location = new System.Drawing.Point(190, 370);
             this.textBoxCMD.Name = "textBoxCMD";
             this.textBoxCMD.Size = new System.Drawing.Size(577, 20);
             this.textBoxCMD.TabIndex = 10;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(46, 265);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(137, 23);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "Results Folder...";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 377);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(13, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "6";
+            // 
+            // textBoxResultsFolder
+            // 
+            this.textBoxResultsFolder.Location = new System.Drawing.Point(190, 265);
+            this.textBoxResultsFolder.Name = "textBoxResultsFolder";
+            this.textBoxResultsFolder.Size = new System.Drawing.Size(577, 20);
+            this.textBoxResultsFolder.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 539);
+            this.Controls.Add(this.textBoxResultsFolder);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.textBoxCMD);
             this.Controls.Add(this.textBoxResults);
             this.Controls.Add(this.button4);
@@ -186,6 +218,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -216,6 +249,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxResults;
         private System.Windows.Forms.TextBox textBoxCMD;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.TextBox textBoxResultsFolder;
     }
 }
 

@@ -24,6 +24,7 @@ namespace Nunit_Test_Runner
         {
             Properties.Settings.Default.dllpath = this.nunitdllpath.Text;
             Properties.Settings.Default.runnerpath = this.textBoxRunnerPath.Text;
+            Properties.Settings.Default.respath = this.textBoxResultsFolder.Text;
             Properties.Settings.Default.Save();
         }
 
@@ -31,6 +32,7 @@ namespace Nunit_Test_Runner
         {
             this.nunitdllpath.Text = Properties.Settings.Default.dllpath;
             this.textBoxRunnerPath.Text = Properties.Settings.Default.runnerpath;
+            this.textBoxResultsFolder.Text = Properties.Settings.Default.respath;
 
         }
 
@@ -78,7 +80,8 @@ namespace Nunit_Test_Runner
             string selectedTest = this.listBoxTestNames.SelectedItem.ToString();
             string DllPath = "\"" + this.nunitdllpath.Text + "\"";
             string runnerPath = "\"" + this.textBoxRunnerPath.Text + "\"";
-            string args = "--test=" + selectedTest + " " + DllPath;
+            string resultsPath = "\"" + this.folderBrowserDialog1.SelectedPath + "\\TestResult.xml\"";
+            string args = "--test=" + selectedTest + " --result=" + resultsPath + " " + DllPath;
             this.textBoxCMD.Text = runnerPath + " " + args;
             ExecuteCommand(runnerPath, args);
         }
@@ -118,6 +121,15 @@ namespace Nunit_Test_Runner
                 this.textBoxResults.AppendText(ex.Message);
                 return false;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.textBoxResultsFolder.Text = this.folderBrowserDialog1.SelectedPath + "\\TestResult.xml";
+            }
+            
         }
     }
 }
