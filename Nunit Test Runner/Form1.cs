@@ -20,21 +20,6 @@ namespace Nunit_Test_Runner
             InitializeComponent();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Properties.Settings.Default.dllpath = this.nunitdllpath.Text;
-            Properties.Settings.Default.runnerpath = this.textBoxRunnerPath.Text;
-            Properties.Settings.Default.respath = this.textBoxResultsFolder.Text;
-            Properties.Settings.Default.Save();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            this.nunitdllpath.Text = Properties.Settings.Default.dllpath;
-            this.textBoxRunnerPath.Text = Properties.Settings.Default.runnerpath;
-            this.textBoxResultsFolder.Text = Properties.Settings.Default.respath;
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -130,6 +115,23 @@ namespace Nunit_Test_Runner
                 this.textBoxResultsFolder.Text = this.folderBrowserDialog1.SelectedPath + "\\TestResult.xml";
             }
             
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.nunitdllpath.Text = Properties.Settings.Default.dllpath;
+            this.textBoxRunnerPath.Text = Properties.Settings.Default.runnerpath;
+            this.textBoxResultsFolder.Text = Properties.Settings.Default.respath;
+            this.textBoxRunnerPath.Text = "hello";
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+                Properties.Settings.Default.dllpath = this.nunitdllpath.Text;
+                Properties.Settings.Default.runnerpath = this.textBoxRunnerPath.Text;
+                Properties.Settings.Default.respath = this.textBoxResultsFolder.Text;
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.Upgrade();
         }
     }
 }
