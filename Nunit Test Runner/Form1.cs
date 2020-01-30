@@ -76,8 +76,21 @@ namespace Nunit_Test_Runner
         //run the tests button
         private void button4_Click(object sender, EventArgs e)
         {
+            string selectedTest="";
             this.textBoxResults.Clear();
-            string selectedTest = this.listBoxTestNames.SelectedItem.ToString();
+            // build comma delimited list of selected tests:
+            bool firstTest = true;
+            foreach (object selectedItem in listBoxTestNames.SelectedItems)
+            {
+                if (firstTest)
+                {
+                    selectedTest += selectedItem.ToString();
+                    firstTest = false;
+                }
+                else
+                    selectedTest += "," + selectedItem.ToString();
+            }
+            //string selectedTest = this.listBoxTestNames.SelectedItem.ToString();
             string DllPath = "\"" + this.nunitdllpath.Text + "\"";
             string runnerPath = "\"" + this.textBoxRunnerPath.Text + "\"";
             string resultsPath = "\"" + this.textBoxResultsFolder.Text + "\"";
@@ -85,6 +98,7 @@ namespace Nunit_Test_Runner
             this.textBoxCMD.Text = runnerPath + " " + args;
             bool testsRan = ExecuteCommand(runnerPath, args);
             //now convert results to html
+            // This uses a free tool called nure.exe - https://github.com/eger-geger/nunit-html-report
             if (testsRan)
             {
                 string path = Directory.GetCurrentDirectory();

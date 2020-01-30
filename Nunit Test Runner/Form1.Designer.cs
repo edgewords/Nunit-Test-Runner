@@ -55,6 +55,7 @@
             this.listBoxTestNames.Location = new System.Drawing.Point(188, 76);
             this.listBoxTestNames.Name = "listBoxTestNames";
             this.listBoxTestNames.ScrollAlwaysVisible = true;
+            this.listBoxTestNames.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxTestNames.Size = new System.Drawing.Size(579, 160);
             this.listBoxTestNames.TabIndex = 0;
             // 
