@@ -47,6 +47,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.textBoxResultsFolder = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxTestNames
@@ -55,7 +56,7 @@
             this.listBoxTestNames.Location = new System.Drawing.Point(188, 76);
             this.listBoxTestNames.Name = "listBoxTestNames";
             this.listBoxTestNames.ScrollAlwaysVisible = true;
-            this.listBoxTestNames.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listBoxTestNames.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxTestNames.Size = new System.Drawing.Size(579, 160);
             this.listBoxTestNames.TabIndex = 0;
             // 
@@ -145,7 +146,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(45, 370);
+            this.button4.Location = new System.Drawing.Point(45, 350);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 23);
             this.button4.TabIndex = 8;
@@ -164,16 +165,16 @@
             // 
             // textBoxResults
             // 
-            this.textBoxResults.Location = new System.Drawing.Point(190, 399);
+            this.textBoxResults.Location = new System.Drawing.Point(190, 394);
             this.textBoxResults.Multiline = true;
             this.textBoxResults.Name = "textBoxResults";
             this.textBoxResults.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxResults.Size = new System.Drawing.Size(577, 88);
+            this.textBoxResults.Size = new System.Drawing.Size(577, 120);
             this.textBoxResults.TabIndex = 9;
             // 
             // textBoxCMD
             // 
-            this.textBoxCMD.Location = new System.Drawing.Point(190, 370);
+            this.textBoxCMD.Location = new System.Drawing.Point(190, 350);
             this.textBoxCMD.Name = "textBoxCMD";
             this.textBoxCMD.Size = new System.Drawing.Size(577, 20);
             this.textBoxCMD.TabIndex = 10;
@@ -191,7 +192,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 377);
+            this.label6.Location = new System.Drawing.Point(26, 357);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 2;
@@ -204,11 +205,21 @@
             this.textBoxResultsFolder.Size = new System.Drawing.Size(577, 20);
             this.textBoxResultsFolder.TabIndex = 12;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(46, 394);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Output";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 539);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxResultsFolder);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBoxCMD);
@@ -256,6 +267,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.TextBox textBoxResultsFolder;
+        private System.Windows.Forms.Label label7;
     }
 }
 

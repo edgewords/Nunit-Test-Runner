@@ -93,8 +93,8 @@ namespace Nunit_Test_Runner
             //string selectedTest = this.listBoxTestNames.SelectedItem.ToString();
             string DllPath = "\"" + this.nunitdllpath.Text + "\"";
             string runnerPath = "\"" + this.textBoxRunnerPath.Text + "\"";
-            string resultsPath = "\"" + this.textBoxResultsFolder.Text + "\"";
-            string args = "--test=" + selectedTest + " --result=" + resultsPath +"\\TestResult.xml" + " " + DllPath;
+            string resultsPath = this.textBoxResultsFolder.Text;
+            string args = "--test=" + selectedTest + " --result=\"" + resultsPath +"\\TestResult.xml\"" + " " + DllPath;
             this.textBoxCMD.Text = runnerPath + " " + args;
             bool testsRan = ExecuteCommand(runnerPath, args);
             //now convert results to html
@@ -103,8 +103,8 @@ namespace Nunit_Test_Runner
             {
                 string path = Directory.GetCurrentDirectory();
                 string pathToNure = "\"" + path + "\\Nure.1.2.0\\tools\\nure.exe\"";
-                this.textBoxResults.AppendText(pathToNure + " " + resultsPath + "\\TestResult.xml -o \"" + resultsPath + "\" --html");
-                ExecuteCommand(pathToNure, resultsPath + "\\TestResult.xml -o \"" + resultsPath + "\" --html");
+                this.textBoxResults.AppendText(pathToNure + " \"" + resultsPath + "\\TestResult.xml\" -o \"" + resultsPath + "\" --html");
+                ExecuteCommand(pathToNure, "\"" + resultsPath + "\\TestResult.xml\" -o \"" + resultsPath + "\" --html");
 
             }
         }
