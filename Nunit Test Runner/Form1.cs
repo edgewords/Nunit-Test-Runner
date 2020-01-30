@@ -20,7 +20,7 @@ namespace Nunit_Test_Runner
             InitializeComponent();
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.dllpath = this.nunitdllpath.Text;
             Properties.Settings.Default.runnerpath = this.textBoxRunnerPath.Text;
@@ -28,7 +28,7 @@ namespace Nunit_Test_Runner
             Properties.Settings.Default.Save();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             this.nunitdllpath.Text = Properties.Settings.Default.dllpath;
             this.textBoxRunnerPath.Text = Properties.Settings.Default.runnerpath;
