@@ -89,11 +89,11 @@ namespace Nunit_Test_Runner
             {
                 if (firstTest)
                 {
-                    selectedTest = "\"method==" + selectedItem.ToString();
+                    selectedTest = "\"name==" + selectedItem.ToString();
                     firstTest = false;
                 }
                 else
-                    selectedTest += " or method==" + selectedItem.ToString();
+                    selectedTest += " or name==" + selectedItem.ToString();
             }
             selectedTest += "\"";
             //string selectedTest = this.listBoxTestNames.SelectedItem.ToString();
