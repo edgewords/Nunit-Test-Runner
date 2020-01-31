@@ -49,6 +49,7 @@
             this.textBoxResultsFolder = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.checkBoxInternalRunner = new System.Windows.Forms.CheckBox();
+            this.checkBoxAllTests = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // listBoxTestNames
@@ -226,11 +227,23 @@
             this.checkBoxInternalRunner.UseVisualStyleBackColor = true;
             this.checkBoxInternalRunner.CheckedChanged += new System.EventHandler(this.checkBoxInternalRunner_CheckedChanged);
             // 
+            // checkBoxAllTests
+            // 
+            this.checkBoxAllTests.AutoSize = true;
+            this.checkBoxAllTests.Location = new System.Drawing.Point(63, 180);
+            this.checkBoxAllTests.Name = "checkBoxAllTests";
+            this.checkBoxAllTests.Size = new System.Drawing.Size(66, 17);
+            this.checkBoxAllTests.TabIndex = 16;
+            this.checkBoxAllTests.Text = "All Tests";
+            this.checkBoxAllTests.UseVisualStyleBackColor = true;
+            this.checkBoxAllTests.CheckedChanged += new System.EventHandler(this.checkBoxAllTests_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 539);
+            this.Controls.Add(this.checkBoxAllTests);
             this.Controls.Add(this.checkBoxInternalRunner);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxResultsFolder);
@@ -282,6 +295,7 @@
         private System.Windows.Forms.TextBox textBoxResultsFolder;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox checkBoxInternalRunner;
+        private System.Windows.Forms.CheckBox checkBoxAllTests;
     }
 }
 

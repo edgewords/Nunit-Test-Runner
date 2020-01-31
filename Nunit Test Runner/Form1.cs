@@ -83,28 +83,37 @@ namespace Nunit_Test_Runner
         {
             string selectedTest="";
             this.textBoxResults.Clear();
-            // build comma delimited list of selected tests:
+            // build string list of selected tests:
             bool firstTest = true;
             foreach (object selectedItem in listBoxTestNames.SelectedItems)
             {
                 if (firstTest)
                 {
-                    selectedTest = "\"name==" + selectedItem.ToString();
+                    selectedTest = "--where \"name==" + selectedItem.ToString();
                     firstTest = false;
                 }
                 else
                     selectedTest += " or name==" + selectedItem.ToString();
             }
             selectedTest += "\"";
-            //string selectedTest = this.listBoxTestNames.SelectedItem.ToString();
+            if (this.checkBoxAllTests.Checked)
+                selectedTest = ""; // if all tests selected then don't filter tests
+
             string DllPath = "\"" + this.nunitdllpath.Text + "\"";
             string runnerPath = "\"" + this.textBoxRunnerPath.Text + "\"";
+
+            //if the internal runner option is checked then set the path to nunite console runner
             if (this.checkBoxInternalRunner.Checked) 
                 runnerPath = "\"" + Directory.GetCurrentDirectory() + "\\NUnitConsoleRunner\\tools\\nunit3-console.exe\"";
             string resultsPath = this.textBoxResultsFolder.Text;
-            string args = "--where " + selectedTest + " --result=\"" + resultsPath +"\\TestResult.xml\"" + " " + DllPath;
-            this.textBoxCMD.Text = runnerPath + " " + args;
+
+            // set up full arguments list:
+            string args = selectedTest + " --result=\"" + resultsPath +"\\TestResult.xml\"" + " " + DllPath;
+
+            this.textBoxCMD.Text = runnerPath + " " + args; //display the commandline that will be executed
+            //run the commandline:
             bool testsRan = ExecuteCommand(runnerPath, args);
+
             //now convert results to html
             // This uses a free tool called nure.exe - https://github.com/eger-geger/nunit-html-report
             if (testsRan)
@@ -160,6 +169,8 @@ namespace Nunit_Test_Runner
             this.nunitdllpath.Text = Properties.Settings.Default.dllpath;
             this.textBoxRunnerPath.Text = Properties.Settings.Default.runnerpath;
             this.textBoxResultsFolder.Text = Properties.Settings.Default.respath;
+            checkBoxInternalRunner.Checked = true;
+            this.textBoxRunnerPath.Enabled = false;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -174,13 +185,17 @@ namespace Nunit_Test_Runner
         private void checkBoxInternalRunner_CheckedChanged(object sender, EventArgs e)
         {
             if (this.checkBoxInternalRunner.Checked)
-            {
                 this.textBoxRunnerPath.Enabled = false;
-            }
             else
-            {
                 this.textBoxRunnerPath.Enabled = true;
-            }
+        }
+
+        private void checkBoxAllTests_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBoxAllTests.Checked)
+                this.listBoxTestNames.Enabled = false;
+            else
+                this.listBoxTestNames.Enabled = true;
         }
     }
 }
