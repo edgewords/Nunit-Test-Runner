@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Nunit Test Runner
+ * Copyright 2020 Edgewords Ltd
+ * Developed by Tom Millichamp
+ * License GPL v3.0
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -93,6 +98,8 @@ namespace Nunit_Test_Runner
             //string selectedTest = this.listBoxTestNames.SelectedItem.ToString();
             string DllPath = "\"" + this.nunitdllpath.Text + "\"";
             string runnerPath = "\"" + this.textBoxRunnerPath.Text + "\"";
+            if (this.checkBoxInternalRunner.Checked) 
+                runnerPath = "\"" + Directory.GetCurrentDirectory() + "\\NUnitConsoleRunner\\tools\\nunit3-console.exe\"";
             string resultsPath = this.textBoxResultsFolder.Text;
             string args = "--test=" + selectedTest + " --result=\"" + resultsPath +"\\TestResult.xml\"" + " " + DllPath;
             this.textBoxCMD.Text = runnerPath + " " + args;
@@ -107,6 +114,7 @@ namespace Nunit_Test_Runner
                 ExecuteCommand(pathToNure, "\"" + resultsPath + "\\TestResult.xml\" -o \"" + resultsPath + "\" --html");
 
             }
+            this.textBoxResults.AppendText("All Jobs Completed");
         }
 
         public bool ExecuteCommand(string exeDir, string args)
@@ -160,6 +168,18 @@ namespace Nunit_Test_Runner
                 Properties.Settings.Default.respath = this.textBoxResultsFolder.Text;
                 Properties.Settings.Default.Save();
                 //Properties.Settings.Default.Upgrade();
+        }
+
+        private void checkBoxInternalRunner_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBoxInternalRunner.Checked)
+            {
+                this.textBoxRunnerPath.Enabled = false;
+            }
+            else
+            {
+                this.textBoxRunnerPath.Enabled = true;
+            }
         }
     }
 }

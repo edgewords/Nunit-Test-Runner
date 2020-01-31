@@ -66,6 +66,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="NUnitConsoleRunner\.signature.p7s" />
+    <None Include="NUnitConsoleRunner\NUnit.ConsoleRunner.3.10.0.nupkg" />
+    <None Include="NUnitConsoleRunner\tools\nunit-agent-x86.exe.config" />
+    <None Include="NUnitConsoleRunner\tools\nunit-agent.exe.config" />
+    <None Include="NUnitConsoleRunner\tools\nunit.nuget.addins" />
+    <None Include="NUnitConsoleRunner\tools\nunit3-console.exe.config" />
     <None Include="Nure.1.2.0\.signature.p7s" />
     <None Include="Nure.1.2.0\Nure.1.2.0.nupkg" />
     <None Include="Nure.1.2.0\tools\nure.exe.config" />
@@ -83,6 +89,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="NUnitConsoleRunner\CHANGES.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="NUnitConsoleRunner\LICENSE.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="NUnitConsoleRunner\NOTICES.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="NUnitConsoleRunner\tools\Mono.Cecil.dll" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="NUnitConsoleRunner\tools\nunit-agent-x86.exe" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="NUnitConsoleRunner\tools\nunit-agent.exe" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="NUnitConsoleRunner\tools\nunit.engine.api.dll" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="NUnitConsoleRunner\tools\nunit.engine.api.xml" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="NUnitConsoleRunner\tools\nunit.engine.dll" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="NUnitConsoleRunner\tools\nunit3-console.exe" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="Nure.1.2.0\tools\CommandLine.dll" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="Nure.1.2.0\tools\HtmlAgilityPack.dll" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="Nure.1.2.0\tools\Newtonsoft.Json.dll" CopyToOutputDirectory="PreserveNewest" />

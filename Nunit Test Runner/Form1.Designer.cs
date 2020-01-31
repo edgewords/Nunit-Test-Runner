@@ -48,6 +48,7 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.textBoxResultsFolder = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.checkBoxInternalRunner = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // listBoxTestNames
@@ -129,7 +130,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(45, 307);
+            this.button3.Location = new System.Drawing.Point(45, 329);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(138, 23);
             this.button3.TabIndex = 6;
@@ -139,14 +140,14 @@
             // 
             // textBoxRunnerPath
             // 
-            this.textBoxRunnerPath.Location = new System.Drawing.Point(190, 309);
+            this.textBoxRunnerPath.Location = new System.Drawing.Point(190, 331);
             this.textBoxRunnerPath.Name = "textBoxRunnerPath";
             this.textBoxRunnerPath.Size = new System.Drawing.Size(577, 20);
             this.textBoxRunnerPath.TabIndex = 7;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(45, 350);
+            this.button4.Location = new System.Drawing.Point(45, 370);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 23);
             this.button4.TabIndex = 8;
@@ -157,7 +158,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 312);
+            this.label5.Location = new System.Drawing.Point(26, 331);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(13, 13);
             this.label5.TabIndex = 2;
@@ -165,7 +166,7 @@
             // 
             // textBoxResults
             // 
-            this.textBoxResults.Location = new System.Drawing.Point(190, 394);
+            this.textBoxResults.Location = new System.Drawing.Point(190, 407);
             this.textBoxResults.Multiline = true;
             this.textBoxResults.Name = "textBoxResults";
             this.textBoxResults.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -174,7 +175,7 @@
             // 
             // textBoxCMD
             // 
-            this.textBoxCMD.Location = new System.Drawing.Point(190, 350);
+            this.textBoxCMD.Location = new System.Drawing.Point(190, 370);
             this.textBoxCMD.Name = "textBoxCMD";
             this.textBoxCMD.Size = new System.Drawing.Size(577, 20);
             this.textBoxCMD.TabIndex = 10;
@@ -192,7 +193,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 357);
+            this.label6.Location = new System.Drawing.Point(26, 373);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 2;
@@ -208,17 +209,29 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(46, 394);
+            this.label7.Location = new System.Drawing.Point(144, 407);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Output";
+            // 
+            // checkBoxInternalRunner
+            // 
+            this.checkBoxInternalRunner.AutoSize = true;
+            this.checkBoxInternalRunner.Location = new System.Drawing.Point(190, 304);
+            this.checkBoxInternalRunner.Name = "checkBoxInternalRunner";
+            this.checkBoxInternalRunner.Size = new System.Drawing.Size(149, 17);
+            this.checkBoxInternalRunner.TabIndex = 15;
+            this.checkBoxInternalRunner.Text = "Use Internal Nunit Runner";
+            this.checkBoxInternalRunner.UseVisualStyleBackColor = true;
+            this.checkBoxInternalRunner.CheckedChanged += new System.EventHandler(this.checkBoxInternalRunner_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 539);
+            this.Controls.Add(this.checkBoxInternalRunner);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxResultsFolder);
             this.Controls.Add(this.button5);
@@ -268,6 +281,7 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.TextBox textBoxResultsFolder;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox checkBoxInternalRunner;
     }
 }
 
