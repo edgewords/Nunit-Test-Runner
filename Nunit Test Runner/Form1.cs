@@ -89,19 +89,20 @@ namespace Nunit_Test_Runner
             {
                 if (firstTest)
                 {
-                    selectedTest += selectedItem.ToString();
+                    selectedTest = "\"method==" + selectedItem.ToString();
                     firstTest = false;
                 }
                 else
-                    selectedTest += "," + selectedItem.ToString();
+                    selectedTest += " or method==" + selectedItem.ToString();
             }
+            selectedTest += "\"";
             //string selectedTest = this.listBoxTestNames.SelectedItem.ToString();
             string DllPath = "\"" + this.nunitdllpath.Text + "\"";
             string runnerPath = "\"" + this.textBoxRunnerPath.Text + "\"";
             if (this.checkBoxInternalRunner.Checked) 
                 runnerPath = "\"" + Directory.GetCurrentDirectory() + "\\NUnitConsoleRunner\\tools\\nunit3-console.exe\"";
             string resultsPath = this.textBoxResultsFolder.Text;
-            string args = "--test=" + selectedTest + " --result=\"" + resultsPath +"\\TestResult.xml\"" + " " + DllPath;
+            string args = "--where " + selectedTest + " --result=\"" + resultsPath +"\\TestResult.xml\"" + " " + DllPath;
             this.textBoxCMD.Text = runnerPath + " " + args;
             bool testsRan = ExecuteCommand(runnerPath, args);
             //now convert results to html

@@ -115,9 +115,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(26, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 13);
+            this.label3.Size = new System.Drawing.Size(156, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "3        Select Test to Execute";
+            this.label3.Text = "3        Select Test(s) to Execute";
             // 
             // label4
             // 
