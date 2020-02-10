@@ -123,4 +123,29 @@
   <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>157, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAA
+        AAAAmf7/AJn+/wCZ/v8Amf7/AJn+/wOa/v8Cmv7/AJf+/wCW/v8Alv7/AJn+/wSb/v8Cmv7/AJn+/wCZ
+        /v8Amf7/AJn+/wCZ/v8Amf7/AJn+/wKa/v8AlP7/AJT9/w6f/P8ipv3/GqT9/wOZ/f8AkP3/AJX+/wCZ
+        /v8Amf7/AJn+/wCZ/v8Amf7/AJn+/wOa/v8AlP3/PbD6/7bi+//4/P3////+//v9+//j8/v/o9r8/zSt
+        +/8AmP3/AZn+/wCZ/v8Amf7/AJn+/wOa/v8Ak/7/a8L6/////f////7/rNz5/1K2+P9BsPj/Wbj2/5vR
+        9f/V6/X/Jqf7/wCW/v8Cmv7/AJn+/wOa/v8AlP7/QbH6/////f////7/Xr76/wCQ/f8Ck/7/AJT+/wCT
+        /v8Aj/z/D5r4/wyd/P8AmP7/AJn+/wCZ/v8Bmv//AJX8/7fg+f//////k9P6/wCQ/P8Fm///BJv+/wOa
+        /v8Dmv7/BJv+/wGY//8AmP7/AJn+/wCZ/v8Cmv7/AJf//xuh+f/x9/r////+/zes+/8Al/7/Bpv+/wOa
+        /v8Dmv7/BJv+/wSb/v8Em/7/AZn+/wCZ/v8Amf7/A5r+/wCV//80qvf////8/+n3/f8Rm/3/AJH//wGU
+        /v8Ak/7/AJL+/wCR/v8Akv7/AJP+/wCZ/v8Amf7/AJn+/wOa/v8Alf//NKr2/////P/y+v3/kNH4/4jO
+        +P+Kzvj/jM/5/5bT+f+b1/z/ldT8/4XN/P8InP3/AJj+/wGZ/v8Cmv7/AJf//xyh9//z+fr//P7+/0uz
+        9v8ppvj/Man4/zSr+P87rPb/p9j0///////j8/3/DZ37/wCY/v8Bmf7/AJn+/wGa//8AlPr/veD2////
+        //9Hsvv/AJD//wOX//8Dlv//AI///zmo9v////3/v+X8/wCW/P8Bmv7/AJn+/wCZ/v8Dmv7/AJT//0mv
+        8v////z/p9r7/wCQ/P8Gm/7/CZ3+/wCS/v9YuPj////9/3bH+/8Akv7/BJr+/wCZ/v8Amf7/AJn+/wKa
+        //8Akvv/fMTy/////P9mwvz/AJL9/wCS//8Kmvv/1u77/93x+/8OnPv/AJj+/wGZ/v8Amf7/AJn+/wCZ
+        /v8Amf7/Apr//wCS+/9XtvP/0ur1/6PY9/+By/n/xub4/7ni+f8covv/AJb+/wKa/v8Amf7/AJn+/wCZ
+        /v8Amf7/AJn+/wCZ/v8Cmv//AJP+/wOV+f8tqPf/QLD4/yCk+v8Ak/z/AZf+/wGa/v8Amf7/AJn+/wCZ
+        /v8Amf7/AJn+/wCZ/v8Amf7/AJn+/wOa/v8Bmv//AJX//wCT//8Alv//Apr+/wKa/v8Amf7/AJn+/wCZ
+        /v8Amf7/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listBoxTestNames = new System.Windows.Forms.ListBox();
             this.nunitdllpath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -282,8 +283,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nunitdllpath);
             this.Controls.Add(this.listBoxTestNames);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Nunit Test Runner";
+            this.Text = "Nunit Test Runner - Edgewords Ltd";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
