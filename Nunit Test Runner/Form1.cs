@@ -101,6 +101,11 @@ namespace Nunit_Test_Runner
 
             string DllPath = "\"" + this.nunitdllpath.Text + "\"";
             string runnerPath = "\"" + this.textBoxRunnerPath.Text + "\"";
+            string cats = "";
+            if (textBoxCategories.Text != "" && checkBoxAllTests.Checked)
+            {
+                cats = "--where cat==\"" + textBoxCategories.Text + "\"";
+            }
 
             //if the internal runner option is checked then set the path to nunite console runner
             if (this.checkBoxInternalRunner.Checked) 
@@ -108,7 +113,7 @@ namespace Nunit_Test_Runner
             string resultsPath = this.textBoxResultsFolder.Text;
 
             // set up full arguments list:
-            string args = selectedTest + " --result=\"" + resultsPath +"\\TestResult.xml\"" + " " + DllPath;
+            string args = selectedTest + cats + " --result=\"" + resultsPath +"\\TestResult.xml\"" + " " + DllPath;
 
             this.textBoxCMD.Text = runnerPath + " " + args; //display the commandline that will be executed
             //run the commandline:
@@ -169,6 +174,7 @@ namespace Nunit_Test_Runner
             this.nunitdllpath.Text = Properties.Settings.Default.dllpath;
             this.textBoxRunnerPath.Text = Properties.Settings.Default.runnerpath;
             this.textBoxResultsFolder.Text = Properties.Settings.Default.respath;
+            this.textBoxCategories.Text = Properties.Settings.Default.categories;
             checkBoxInternalRunner.Checked = true;
             this.textBoxRunnerPath.Enabled = false;
         }
@@ -178,6 +184,7 @@ namespace Nunit_Test_Runner
                 Properties.Settings.Default.dllpath = this.nunitdllpath.Text;
                 Properties.Settings.Default.runnerpath = this.textBoxRunnerPath.Text;
                 Properties.Settings.Default.respath = this.textBoxResultsFolder.Text;
+                Properties.Settings.Default.categories = this.textBoxCategories.Text;
                 Properties.Settings.Default.Save();
                 //Properties.Settings.Default.Upgrade();
         }
