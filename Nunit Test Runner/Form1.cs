@@ -177,6 +177,7 @@ namespace Nunit_Test_Runner
             this.textBoxCategories.Text = Properties.Settings.Default.categories;
             checkBoxInternalRunner.Checked = true;
             this.textBoxRunnerPath.Enabled = false;
+            this.textBoxCategories.Enabled = false;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -200,9 +201,15 @@ namespace Nunit_Test_Runner
         private void checkBoxAllTests_CheckedChanged(object sender, EventArgs e)
         {
             if (this.checkBoxAllTests.Checked)
+            {
                 this.listBoxTestNames.Enabled = false;
+                this.textBoxCategories.Enabled = true;
+            }
             else
+            {
                 this.listBoxTestNames.Enabled = true;
+                this.textBoxCategories.Enabled = false;
+            }
         }
     }
 }
